@@ -49,6 +49,15 @@ The new APIs can list the over all pool status(es), the list of pools and the st
 
 This is a bare bones html page that uses the API to show the statics of the pool while there is a test of 2k http requests being issued.  There's a lot of detail in this API ranging from the most simple `borrowedConnectionsCount` which is the connections currently being used to things like the wait time to getting a connection. 
 
+These APIs changed in ORDS 21.2 with the following end points.
+
+```
+/ords/_/instance-api/stable/database-pools-cache/
+/ords/_/instance-api/stable/database-pools-cache/{pool},{type}
+/ords/_/instance-api/stable/database-pools-cache/{pool},{type},{service}
+/ords/_/instance-api/stable/status
+```
+
 ## Instance API Setup
 
 The thing to note is this is an ORDS level API across ALL connection pools so there is no database user nor database roles that can be used to gain access to this API. That would not really make security sense to look into a pool on database A from a credential on database B.  This is going to require a webserver/ords level user and role to be assigned. This can be done many ways depending on the webserver being used to host ords. For example, in Tomcat there is a tomcat-users.xml.  
