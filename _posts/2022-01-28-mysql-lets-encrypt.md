@@ -81,7 +81,7 @@ sudo systemctl start httpd
 Create an index file to test if the server is running with from a browser. 
 
 ```
-echo Hello >  /var/www/html/index.html
+sudo echo Hello >  /var/www/html/index.html
 ```
 
 Now Just like with MySQL, the Cloud Security list will need to allow ingress on ports 80 and 443.
@@ -144,7 +144,7 @@ SSLCertificateChainFile /etc/letsencrypt/live/mysql.example.com/chain.pem
 Create and execute script `/etc/letsencrypt/renewal-hooks/deploy/httpd-deploy.sh` to deploy TLS Certificate to Apache
 ```
 # Reload the new SSL httpd configuration
-# systemctl reload httpd
+systemctl reload httpd
 ```
 
 
