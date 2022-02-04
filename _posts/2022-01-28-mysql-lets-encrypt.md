@@ -144,7 +144,7 @@ SSLCertificateChainFile /etc/letsencrypt/live/mysql.example.com/chain.pem
 Create and execute script `/etc/letsencrypt/renewal-hooks/deploy/httpd-deploy.sh` to deploy TLS Certificate to Apache
 ```
 # Reload the new SSL httpd configuration
-systemctl reload httpd
+sudo systemctl reload httpd
 ```
 
 
@@ -185,7 +185,10 @@ ssl_key=/var/lib/mysql/privkey.pem
 Store root@localhost password in an obfuscated login path file (~/. mylogin.cnf) using MySQL Configuration Utility
 ```
 
-mysql_config_editor set --login-path=root@localhost --host=localhost --user=root –password
+sudo mysql_config_editor set --login-path=root@localhost --host=localhost --user=root –password
+
+# Restart to take effect
+sudo systemctl mysqld restart
 
 ```
 Create and execute script /etc/letsencrypt/renewal-hooks/deploy/mysqld-deploy.sh to deploy TLS Certificate to MySQL Server
