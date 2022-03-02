@@ -2,7 +2,7 @@
 layout: post
 published: true
 title: 'Strava/Zwift and Autonomous Database'
-date: '2022-01-28'
+date: '2022-03-02'
 ---
 
 # Visualize and Analyze Strava Data on Autonomous Database
