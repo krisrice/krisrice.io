@@ -23,7 +23,7 @@ description: This blog is mostly centered around Oracle Database Development too
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "https://stackoverflow.com/cv/krisrice"
+  About Me: "/aboutme.html"
   Archives : "http://krisrice.io/archive/"
   Resources:
     - REST Data Services : "http://www.oracle.com/rest"
