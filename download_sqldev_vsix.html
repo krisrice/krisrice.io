@@ -1,0 +1,293 @@
+<html>
+    <head>
+        <title>Download SQL Developer VSIX</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Hack font from CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css">
+        <style>
+            body {
+                background: linear-gradient(135deg, #181a1b 0%, #23272e 100%);
+                color: #eaeaea;
+                font-family: 'Hack', 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+                margin: 0;
+                padding: 0;
+                min-height: 100vh;
+            }
+            .container {
+                max-width: 950px;
+                margin: 0 auto;
+                padding: 32px 16px 48px 16px;
+                background: rgba(30,34,40,0.98);
+                border-radius: 18px;
+                box-shadow: 0 8px 32px #000a, 0 1.5px 0 #50fa7b inset;
+                margin-top: 32px;
+            }
+            h1 {
+                font-family: 'Hack', monospace;
+                color: #ffb86c;
+                margin-bottom: 0.2em;
+                font-size: 2.2em;
+                letter-spacing: 0.04em;
+                text-shadow: 0 2px 8px #000a;
+            }
+            h2 {
+                color: #8be9fd;
+                margin-top: 2em;
+                font-size: 1.4em;
+                letter-spacing: 0.03em;
+                border-bottom: 2px solid #50fa7b44;
+                padding-bottom: 0.2em;
+                margin-bottom: 1em;
+            }
+            p {
+                color: #bcbcbc;
+                font-size: 1.1em;
+            }
+            .db-icon {
+                font-size: 2.5em;
+                color: #50fa7b;
+                margin-bottom: 0.2em;
+                filter: drop-shadow(0 2px 8px #50fa7b44);
+                display: inline-block;
+            }
+            table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0;
+                margin-top: 1.5em;
+                background: #23272e;
+                box-shadow: 0 2px 16px #0006;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            th, td {
+                padding: 14px 12px;
+                border-bottom: 1px solid #444;
+                font-size: 1em;
+            }
+            th {
+                background: linear-gradient(90deg, #282c34 80%, #50fa7b22 100%);
+                color: #50fa7b;
+                font-size: 1.1em;
+                letter-spacing: 0.05em;
+                border-bottom: 2px solid #50fa7b44;
+                text-align: left;
+            }
+            tr:nth-child(even) {
+                background: #22252a;
+            }
+            tr:nth-child(odd) {
+                background: #23272e;
+            }
+            a {
+                color: #61dafb;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Hack', monospace;
+                transition: color 0.2s;
+                border-bottom: 1px dashed #8be9fd77;
+            }
+            a:hover {
+                color: #ff79c6;
+                text-decoration: underline;
+                border-bottom: 1px solid #ff79c6;
+            }
+            code {
+                background: #181a1b;
+                color: #f1fa8c;
+                padding: 4px 8px;
+                border-radius: 4px;
+                font-size: 1em;
+                font-family: 'Hack', monospace;
+                box-shadow: 0 1px 4px #0004;
+            }
+            .curl-row td {
+                background: #181a1b !important;
+                color: #bcbcbc;
+                border-top: none;
+                font-size: 0.98em;
+                border-bottom: 1.5px solid #282c34;
+            }
+            .note {
+                color:#ffb86c;
+                background:#23272e;
+                border-radius:6px;
+                padding:10px 18px;
+                margin:18px auto 0 auto;
+                max-width:600px;
+                font-size:1.05em;
+                border-left: 4px solid #ffb86c;
+                box-shadow: 0 2px 8px #0003;
+            }
+            .db-border {
+                border: 2.5px solid #50fa7b;
+                box-shadow: 0 0 0 4px #23272e, 0 2px 16px #50fa7b22;
+            }
+            @media (max-width: 700px) {
+                .container, table {
+                    width: 100%;
+                    font-size: 0.95em;
+                }
+                th, td {
+                    padding: 8px 4px;
+                }
+                .container {
+                    padding: 12px 2px 24px 2px;
+                }
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <div class="container db-border">
+            <div style="padding: 24px 0 16px 0; text-align: center;">
+                <img src="https://www.oracle.com/a/ocom/img/sql-dev3.svg" alt="Oracle SQL Developer Logo" style="height:64px;width:64px;margin-bottom:12px;filter:drop-shadow(0 2px 8px #50fa7b44);" />
+                <h1>Oracle SQL Developer VSIX Download</h1>
+                <p>This page allows you to download the Oracle SQL Developer extension for Visual Studio Code.</p>
+                <p class="note">
+                    <strong>Note:</strong> When you click a download link, your browser may save the file as <code>Microsoft.VisualStudio.Services.VSIXPackage</code> or similar. 
+                    You should rename it to the suggested name (shown in the table) before installing in VS Code.<br>
+                    <span style="color:#8be9fd;">For best results, use a Chromium-based browser (like Chrome or Edge) for direct file saving.</span>
+                </p>
+            </div>
+            <div>
+                <h2>Available VSIX Packages</h2>
+                <table id="vsix-table">
+                    <thead>
+                        <tr>
+                            <th>Version</th>
+                            <th>Platform</th>
+                            <th>Download</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic rows go here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script>
+            // Helper to download and save file with correct name using File System Access API
+            async function handleDownload(url, fileName, anchor) {
+                if ('showSaveFilePicker' in window) {
+                    try {
+                        const opts = {
+                            suggestedName: fileName,
+                            types: [{
+                                description: 'VSIX Extension',
+                                accept: { 'application/octet-stream': ['.vsix'] }
+                            }]
+                        };
+                        const handle = await window.showSaveFilePicker(opts);
+                        const writable = await handle.createWritable();
+                        const response = await fetch(url);
+                        if (!response.ok) throw new Error('Network error');
+                        await response.body.pipeTo(writable);
+                    } catch (e) {
+                        alert('Download failed or cancelled.');
+                    }
+                } else {
+                    // fallback: open in new tab, user must rename manually
+                    window.open(url, '_blank');
+                    alert('Your browser does not support direct file saving. The file will be downloaded as a generic name. Please rename it to:\n\n' + fileName);
+                }
+            }
+
+            function populateVsixTable(data) {
+                const tableBody = document.querySelector('#vsix-table tbody');
+                tableBody.innerHTML = ""; // Clear any existing rows
+                data.versions.forEach(versionObj => {
+                    if (!versionObj.files) return;
+                    const vsixFile = versionObj.files.find(f => f.assetType === "Microsoft.VisualStudio.Services.VSIXPackage");
+                    if (vsixFile) {
+                        const fileName = `Oracle.sql-developer-${versionObj.version}@${versionObj.targetPlatform}.vsix`;
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${versionObj.version}</td>
+                            <td>${versionObj.targetPlatform}</td>
+                            <td>
+                              <a href="#" class="vsix-download" data-url="${vsixFile.source}" data-filename="${fileName}">
+                                ${fileName}
+                              </a>
+                            </td>
+                        `;
+                        tableBody.appendChild(tr);
+
+                        // Add a row with the curl command
+                        const curlCommand = `curl -L "${vsixFile.source}" -o "${fileName}"`;
+                        const curlTr = document.createElement('tr');
+                        curlTr.className = "curl-row";
+                        curlTr.innerHTML = `
+                            <td colspan="3" style="text-align:left;">
+                                <code class="curl-example" style="cursor:pointer;" title="Click to copy">${curlCommand}</code>
+                                <span class="copied-msg" style="display:none;color:#50fa7b;margin-left:12px;font-size:0.98em;">Copied!</span>
+                            </td>
+                        `;
+                        tableBody.appendChild(curlTr);
+                    }
+                });
+
+                // Attach event listeners for download links
+                document.querySelectorAll('.vsix-download').forEach(link => {
+                    link.addEventListener('click', async function(e) {
+                        e.preventDefault();
+                        const url = this.getAttribute('data-url');
+                        const fileName = this.getAttribute('data-filename');
+                        await handleDownload(url, fileName, this);
+                    });
+                });
+
+                // Attach event listeners for curl copy
+                document.querySelectorAll('.curl-example').forEach(codeEl => {
+                    codeEl.addEventListener('click', async function() {
+                        try {
+                            await navigator.clipboard.writeText(this.textContent);
+                            const msg = this.parentElement.querySelector('.copied-msg');
+                            if (msg) {
+                                msg.style.display = 'inline';
+                                setTimeout(() => { msg.style.display = 'none'; }, 1200);
+                            }
+                        } catch (e) {
+                            alert('Failed to copy to clipboard.');
+                        }
+                    });
+                });
+            }
+
+            let queryService = "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery";
+            let queryParams ={
+                filters: [
+                    {
+                    criteria: [
+                        {
+                        filterType: 7,
+                        value: "Oracle.sql-developer",
+                        },
+                    ],
+                    },
+                ],
+                flags: 3,
+                };
+
+            fetch(queryService, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json;api-version=6.0-preview.1'
+                },
+                body: JSON.stringify(queryParams)
+            }) .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json(); // Parse the response as JSON
+            }).then(data => {
+                sqldev=data.results[0].extensions[0];
+                populateVsixTable(sqldev);
+            }).catch(error => {
+                document.querySelector('#vsix-table tbody').innerHTML = `<tr><td colspan="3">Failed to load data.</td></tr>`;
+            });
+        </script>
+    </body>
+</html>
